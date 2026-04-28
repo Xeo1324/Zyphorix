@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { useAuthStore } from '@/lib/hooks/useAuth';
 import { getFeaturedProjects } from '@/lib/utils/firestore';
 import { Project } from '@/lib/hooks/useProjects';
+import WaveAnimation from '@/app/components/WaveAnimation';
 
 export default function HomePage() {
   const router = useRouter();
@@ -143,6 +144,11 @@ export default function HomePage() {
           </div>
         </motion.div>
       </section>
+
+      {/* Wave Animation */}
+      <div className="relative h-64 overflow-hidden">
+        <WaveAnimation />
+      </div>
 
       {/* Features Section */}
       <section className="relative px-4 py-24">
