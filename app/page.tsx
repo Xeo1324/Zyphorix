@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { useAuthStore } from '@/lib/hooks/useAuth';
 import { getFeaturedProjects } from '@/lib/utils/firestore';
 import { Project } from '@/lib/hooks/useProjects';
-import WaveAnimation from '@/app/components/WaveAnimation';
+import LineWaves from '@/app/components/LineWaves';
 
 export default function HomePage() {
   const router = useRouter();
@@ -145,9 +145,23 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Wave Animation */}
-      <div className="relative h-64 overflow-hidden">
-        <WaveAnimation />
+      {/* Advanced Wave Animation */}
+      <div className="relative h-96 overflow-hidden bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950">
+        <LineWaves
+          speed={0.5}
+          innerLineCount={48}
+          outerLineCount={32}
+          warpIntensity={1.2}
+          rotation={-30}
+          edgeFadeWidth={0.1}
+          colorCycleSpeed={0.8}
+          brightness={0.35}
+          color1="#00d4ff"
+          color2="#a855f7"
+          color3="#ff6b00"
+          enableMouseInteraction={true}
+          mouseInfluence={1.5}
+        />
       </div>
 
       {/* Features Section */}
